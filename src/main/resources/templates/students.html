@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+    <h1>Students</h1>
+    <form method="post" action="add_student">
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="student_name"><br>
+        <label for="age">Age:</label>
+        <input id="age" type="number" name="student_age"><br>
+        <label for="rating">Rating:</label>
+        <input id="rating" type="number" step="0.01" name="student_rating"><br>
+        <input type="submit" value="Add">
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Rating</th>
+            <th>X</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.age}"></td>
+                <td th:text="${student.rating}"></td>
+                <td><a th:href="@{/delete_student(id=${student.id})}">delete</a> </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
