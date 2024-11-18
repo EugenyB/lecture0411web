@@ -23,8 +23,8 @@
             <th class="centered">Name</th>
             <th class="w10 centered">Age</th>
             <th class="w10 centered">Rating</th>
-            <th class="w10 centered">E</th>
-            <th class="w10 centered">X</th>
+            <th class="w10 centered"><i class="bi bi-pencil"></i></th>
+            <th class="w10 centered"><i class="bi bi-trash"></i></th>
         </tr>
         </thead>
         <tbody>
@@ -139,17 +139,17 @@
         let form = document.getElementById('add_form')
         form.setAttribute('action', link)
         if (button.getAttribute('data-bs-ident') === '#add') {
-            hidden.setAttribute("value", "0")
-            name_edit.setAttribute("value", "")
-            age_edit.setAttribute("value", "0")
-            rating_edit.setAttribute("value", "0")
+            hidden.setAttribute('value', '0')
+            name_edit.setAttribute('value', '')
+            age_edit.setAttribute('value', '0')
+            rating_edit.setAttribute('value', '0')
             dialogTitle.textContent = 'Add student'
             approveButton.textContent = 'Add student'
         } else {
-            hidden.setAttribute("value", cid)
-            name_edit.setAttribute("value", cname)
-            age_edit.setAttribute("value", cage)
-            rating_edit.setAttribute("value", crating)
+            hidden.setAttribute('value', cid)
+            name_edit.setAttribute('value', cname)
+            age_edit.setAttribute('value', cage)
+            rating_edit.setAttribute('value', crating)
             dialogTitle.textContent = 'Edit student'
             approveButton.textContent = 'Update student'
         }

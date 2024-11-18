@@ -25,4 +25,13 @@ public class StudentService {
     public void deleteStudentById(int id) {
         studentRepository.deleteById(id);
     }
+
+    public void updateStudent(int id, String name, Integer age, Double rating) {
+        studentRepository.findById(id).ifPresent(student -> {
+            student.setName(name);
+            student.setAge(age);
+            student.setRating(rating);
+            studentRepository.save(student);
+        });
+    }
 }

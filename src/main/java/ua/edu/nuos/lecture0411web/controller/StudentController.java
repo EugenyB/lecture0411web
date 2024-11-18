@@ -40,5 +40,15 @@ public class StudentController {
         studentService.deleteStudentById(id);
         return "redirect:/students";
     }
+
+    @PostMapping("/update_student")
+    public String updateStudent(
+            @RequestParam("student_id") int id,
+            @RequestParam("student_name") String name,
+            @RequestParam("student_age") Integer age,
+            @RequestParam("student_rating") Double rating) {
+        studentService.updateStudent(id, name, age, rating);
+        return "redirect:/students";
+    }
 }
 
